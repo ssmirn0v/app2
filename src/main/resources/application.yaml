@@ -2,14 +2,25 @@ swagger-api:
   version: "1.0"
 
 spring:
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-console
   datasource:
-    url: jdbc:h2:mem:userbook
-    username: test
-    password: test
+#    url: jdbc:h2:mem:userbook
+#    username: test
+#    password: test
+    url: jdbc:postgresql://localhost:15432/
+    username: postgres
+    password: postgres
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create
+
+
 
 server:
   port: 8091

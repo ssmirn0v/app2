@@ -3,9 +3,9 @@ package com.edu.ulab.app.web.response;
 import lombok.Data;
 
 @Data
-public class UserResponse {
+public class BookResponse {
     private Long id;
-    private String fullName;
     private String title;
-    private int age;
+    private String author;
+    private long pageCount;
 }
