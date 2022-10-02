@@ -21,6 +21,12 @@ public class ControllerExceptionHandler {
                 .body(new BaseWebResponse(createErrorMessage(exc)));
     }
 
+    @ExceptionHandler(Exception.class)
+    protected ResponseEntity<BaseWebResponse> handleAllOtherExceptions(Exception exc) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(new BaseWebResponse(createErrorMessage(exc)));
+    }
+
     private String createErrorMessage(Exception exception) {
         final String message = exception.getMessage();
         log.error(ExceptionHandlerUtils.buildErrorMessage(exception));
