@@ -28,15 +28,13 @@ import java.util.stream.Stream;
 @Slf4j
 @Component
 public class UserDataFacade {
-    @Qualifier("UserServiceImplTemplate")
     private final UserService userService;
-    @Qualifier("BookServiceImplTemplate")
     private final BookService bookService;
     private final UserMapper userMapper;
     private final BookMapper bookMapper;
 
-    public UserDataFacade(UserServiceImplTemplate userService,
-                          BookServiceImplTemplate bookService,
+    public UserDataFacade(@Qualifier("UserServiceImpl") UserService userService,
+                          @Qualifier("BookServiceImpl") BookService bookService,
                           UserMapper userMapper,
                           BookMapper bookMapper) {
         this.userService = userService;

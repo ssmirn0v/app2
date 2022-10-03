@@ -5,6 +5,7 @@ import com.edu.ulab.app.exception.NotFoundException;
 import com.edu.ulab.app.mapper.UserMapper;
 import com.edu.ulab.app.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
@@ -15,6 +16,7 @@ import java.util.Objects;
 
 @Slf4j
 @Service
+@Qualifier("UserServiceImplTemplate")
 public class UserServiceImplTemplate implements UserService {
     private final JdbcTemplate jdbcTemplate;
     private final UserMapper userMapper;
