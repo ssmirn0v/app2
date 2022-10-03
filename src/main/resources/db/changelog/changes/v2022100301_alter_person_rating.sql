@@ -1,0 +1,2 @@
+ALTER TABLE ulab_edu.person
+ADD rating INTEGER NOT NULL DEFAULT 0;
